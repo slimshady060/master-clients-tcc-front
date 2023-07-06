@@ -1,0 +1,21 @@
+<h2>Clients List</h2>
+<div>
+  <mat-table [dataSource]="clients">
+    <!-- Columnas de la tabla -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let client">{{ client.name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let client">{{ client.email }}</mat-cell>
+    </ng-container>
+  
+    <!-- Columnas adicionales si es necesario -->
+
+    <!-- Definición de las columnas -->
+    <mat-header-row *matHeaderRowDef="cols"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: cols;"></mat-row>
+  </mat-table>
+</div>
+
