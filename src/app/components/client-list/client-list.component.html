@@ -1,6 +1,17 @@
-<h2>Clients List</h2>
-<div>
-  <mat-table [dataSource]="clients">
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Master Client</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>donut_small</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+<div class="container">
+  <mat-table [dataSource]="clients" class="mat-elevation-z8">
     <!-- Columnas de la tabla -->
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
@@ -10,7 +21,7 @@
       <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
       <mat-cell *matCellDef="let client">{{ client.email }}</mat-cell>
     </ng-container>
-  
+
     <!-- Columnas adicionales si es necesario -->
 
     <!-- Definición de las columnas -->
@@ -18,4 +29,3 @@
     <mat-row *matRowDef="let row; columns: cols;"></mat-row>
   </mat-table>
 </div>
-
