@@ -9,16 +9,12 @@ import { ClientEditComponent } from './components/client-edit/client-edit.compon
 import { ClientListComponent } from './components/client-list/client-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle'
-import { MatSliderModule } from '@angular/material/slider';
-import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule }  from '@angular/material/button';
-import { MatToolbarModule}  from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -27,22 +23,19 @@ import { MatListModule } from '@angular/material/list';
     ClientDetailsComponent,
     ClientEditComponent,
     ClientListComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule,
-    MatSliderModule,
-    MatTableModule,
     HttpClientModule,
-    MatIconModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatDividerModule,
-    MatListModule
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

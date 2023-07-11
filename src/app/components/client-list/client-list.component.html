@@ -1,31 +1,30 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Master Client</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>donut_small</mat-icon>
-  </button>
-</mat-toolbar>
-
-
-<div class="container">
-  <mat-table [dataSource]="clients" class="mat-elevation-z8">
-    <!-- Columnas de la tabla -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-      <mat-cell *matCellDef="let client">{{ client.name }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
-      <mat-cell *matCellDef="let client">{{ client.email }}</mat-cell>
-    </ng-container>
-
-    <!-- Columnas adicionales si es necesario -->
-
-    <!-- Definición de las columnas -->
-    <mat-header-row *matHeaderRowDef="cols"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: cols;"></mat-row>
-  </mat-table>
+<div class="card">
+  <h5 class="card-header font-weight-light">Requirements</h5>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Country</th>
+          <th scope="col">Area</th>
+          <th scope="col">Population</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of countries; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>
+            <img
+              [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag"
+              class="me-2"
+              style="width: 20px"
+            />
+            {{ country.name }}
+          </td>
+          <td>{{ country.area | number }}</td>
+          <td>{{ country.population | number }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

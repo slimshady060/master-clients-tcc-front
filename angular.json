@@ -36,7 +36,8 @@
             ],
             "styles": [
               "src/custom-theme.scss",
-              "src/styles.sass"
+              "src/styles.sass",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
             "scripts": []
           },
@@ -106,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,13 +1,20 @@
-
-<h2>Login</h2>
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+<div class="min-vh-100 d-flex justify-content-center align-items-center">
+  <div class="card shadow">
+    <div class="card-body">
+      <div class="d-flex justify-content-center">
+        <img src="https://assets.dryicons.com/uploads/icon/svg/2088/lock.svg" alt="login" class="img-fluid">
+      </div>
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+      </form>
+    </div>
   </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-  </div>
-  <button type="submit">Login</button>
-</form>
+</div>

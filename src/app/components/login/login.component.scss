@@ -1,0 +1,16 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+  width: 50vh;
+
+  .card-body {
+
+    img {
+      width: 20vh;
+      padding-bottom: 2rem;
+    }
+  }
+}
